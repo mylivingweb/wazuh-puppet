@@ -33,11 +33,14 @@ class wazuh::server (
   $syslog_output                       = false,
   $syslog_output_server                = undef,
   $syslog_output_format                = undef,
+  $syslog_output_port                  = 514,
   $enable_wodle_openscap               = false,
   $wodle_openscap_content              = $::wazuh::params::wodle_openscap_content,
   $local_decoder_template              = 'wazuh/local_decoder.xml.erb',
   $local_rules_template                = 'wazuh/local_rules.xml.erb',
   $shared_agent_template               = 'wazuh/ossec_shared_agent.conf.erb',
+  $ossec_enable_reports                = false,
+  $ossec_report_categories             = [],
 ) inherits wazuh::params {
   validate_bool(
     $ossec_active_response, $ossec_rootcheck,
