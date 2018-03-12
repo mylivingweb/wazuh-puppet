@@ -40,6 +40,8 @@ class wazuh::server (
   $local_rules_template                = 'wazuh/local_rules.xml.erb',
   $shared_agent_template               = 'wazuh/ossec_shared_agent.conf.erb',
   $ossec_enable_reports                = false,
+  $enable_virus_total_integration      = false,
+  $virus_total_api_key                 = undef,
   $ossec_report_categories             = [],
 ) inherits wazuh::params {
   validate_bool(

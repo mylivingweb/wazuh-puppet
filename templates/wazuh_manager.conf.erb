@@ -63,6 +63,9 @@
 <%= scope.function_template(["wazuh/fragments/_wodle_openscap.erb"]) -%>
 <%- end -%>
 
+<%- if @enable_virus_total_integration -%>
+<%= scope.function_template(["wazuh/fragments/_virus_total_integration.erb"]) -%>
+<%- end -%>
 
   <alerts>
     <log_alert_level>3</log_alert_level>
