@@ -16,3 +16,7 @@
   <%- if @enable_wodle_openscap -%>
   <%= scope.function_template(["wazuh/fragments/_wodle_openscap.erb"]) -%>
   <%- end -%>
+
+  <%- if @wodle_enable_syscollector then -%>
+  <%= scope.function_template(["wazuh/fragments/_wodle_syscollector.erb"]) -%>
+  <%- end -%>

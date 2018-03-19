@@ -42,6 +42,7 @@ class wazuh::server (
   $ossec_enable_reports                = false,
   $enable_virus_total_integration      = false,
   $virus_total_api_key                 = undef,
+  $wodle_enable_vul_detector           = false,      
   $ossec_report_categories             = [],
 ) inherits wazuh::params {
   validate_bool(

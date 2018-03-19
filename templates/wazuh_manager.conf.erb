@@ -67,6 +67,10 @@
 <%= scope.function_template(["wazuh/fragments/_virus_total_integration.erb"]) -%>
 <%- end -%>
 
+<%- if @wodle_enable_vul_detector -%>
+<%= scope.function_template(["wazuh/fragments/_wodle_vul_detector.erb"]) -%>
+<%- end -%>
+
   <alerts>
     <log_alert_level>3</log_alert_level>
     <email_alert_level><%= @ossec_email_alert_level %></email_alert_level>

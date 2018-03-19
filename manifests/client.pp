@@ -31,6 +31,7 @@ class wazuh::client(
   $ar_repeated_offenders      = '',
   $enable_wodle_openscap      = true,
   $wodle_openscap_content     = $::wazuh::params::wodle_openscap_content,
+  $wodle_enable_syscollector  = false,
   $service_has_status         = $::wazuh::params::service_has_status,
   $ossec_conf_template        = 'wazuh/wazuh_agent.conf.erb',
 ) inherits wazuh::params {
