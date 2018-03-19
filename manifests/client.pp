@@ -165,7 +165,7 @@ class wazuh::client(
   # Requires selinux module specified in metadata.json
   if ($::osfamily == 'RedHat' and $selinux == true) {
     selinux::module { 'ossec-logrotate':
-      ensure => 'present',
+      ensure    => 'present',
       source_te => 'puppet:///modules/wazuh/ossec-logrotate.te',
     }
   }
