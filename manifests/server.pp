@@ -37,7 +37,6 @@ class wazuh::server (
   $enable_wodle_openscap               = false,
   $wodle_openscap_content              = $::wazuh::params::wodle_openscap_content,
   $local_decoder_template              = 'wazuh/local_decoder.xml.erb',
-  $local_rules_template                = 'wazuh/local_rules.xml.erb',
   $shared_agent_template               = 'wazuh/ossec_shared_agent.conf.erb',
   $ossec_enable_reports                = false,
   $enable_virus_total_integration      = false,
@@ -86,8 +85,6 @@ class wazuh::server (
     $wazuh::params::shared_agent_config_file:
       validate_cmd => $wazuh::params::validate_cmd_conf,
       content      => template($shared_agent_template);
-    '/var/ossec/etc/rules/local_rules.xml':
-      content      => template($local_rules_template);
     '/var/ossec/etc/decoders/local_decoder.xml':
       content      => template($local_decoder_template);
     $wazuh::params::processlist_file:
